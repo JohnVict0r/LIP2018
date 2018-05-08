@@ -1,5 +1,6 @@
 #include <iostream>
 #define MAX 100
+#include <locale.h>
 
 void PreencherSequencia(int v[MAX], int n);
 int somaSegmento(int v[MAX], int a, int b);
@@ -13,6 +14,8 @@ using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "Portuguese");
+
     int n=0;
     int v[MAX];
     int inicio=0,fim=0;//indices para inicio e fim da sequencia com maior valor;
@@ -26,6 +29,7 @@ int main()
 
     cout<<"segmento de maior valor: ";
     imprimirSegmento(v,inicio,fim);
+    cout<<endl<<"a soma do segmento é "<<somaSegmento(v,inicio,fim);
 
 
     return 0;
@@ -37,7 +41,7 @@ void PreencherSequencia(int v[MAX], int n)
     for(int i=0; i<n; i++)
     {
 
-        cout<<i+1<<"� termo da sequencia:";
+        cout<<i+1<<"º termo da sequencia:";
         cin>>v[i];
 
     }
@@ -58,7 +62,7 @@ void verificarPorSegmento(int v[MAX], int n,int &a, int &b)
             {
 
                 verificar=somaSegmento(v,i,j);
-                if(verificar>maiorSegmento)
+                if(verificar>=maiorSegmento)
                 {
                     maiorSegmento=verificar;
                     a=i;
