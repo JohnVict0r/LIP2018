@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1527032277 source:c:\users\john victor\desktop\ufrn\3º semestre\lip\unidade02\caracoroa10\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+
