@@ -11,7 +11,7 @@ int main()
 {
     char p[MAX];
 
-    cout<<"informe uma palavra para verificar se eh um palindromo:";
+    cout<<"informe uma frase/palavra para verificar se eh um palindromo:";
     cin.getline(p,MAX);
 
     ehPalindromo(p);
@@ -21,6 +21,20 @@ int main()
 void ehPalindromo(char palavra[MAX])
 {
     int t = strlen(palavra);
+    
+    //retira os espaço da frase/palavra
+    for(int i=0; i<t;i++)
+    {
+        if((int)palavra[i]==32)
+        {
+            for(int j=i;j<t;j++)
+            {
+                palavra[j]=palavra[j+1];
+            }
+            t=t-1;
+        }
+    }
+   
     if(t==1 || t==0)
     {
         cout<<"eh palindromo!";
